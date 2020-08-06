@@ -1,0 +1,126 @@
+Symbols and characters
+
+print : uses standard out stream, or something. Prints to console
+() parentheses,
+"" quotes, used to contain strings or information usually.
+print can also do math
+variables setting via =. : Variable name on the left. to the right is what we set the variable as
+IAMAVARIABLE = 45
+
+Can also do math between variables
+print(f"") : lets you call variables inside of strings that you print.
+variable5 = "Lets go"
+print(f"Hey there, {variable5}") Makes it say "Hey there, Lets go"
+
+printing two variable's that contain strings with + concatenates it.
+
+You can call .format on your variable to have it do the same thing as print(f"")
+a la ex8.py
+
+""" in a print lets you print EVERYTHING, ignoring all spacing that python normally
+uses
+
+print("""
+sdafkjlasf;jdlsf
+dsafjkldsfjkdslfjdsjklfds
+            fdsjklfdsjklfsdjkl""")
+all of that would print fine.
+\n lets you start a new line.
+print("TEST STRING", end=" ") : end option lets you change how a string ends,
+instead of the default \n new line.
+input() lets you get input from the user via command line.
+You can use this to set variables.
+inputvariable = input()
+You can also use it to print something before the input request
+input("Heres a question: How old are you? ")
+
+from sys import argv : THis lets you pull in more modules and functions
+from other stuff people have already created. Argv specifically lets you
+get arguements from the scripts execution
+The FIRST argument is always the scripts file name. it may include the file location
+So we use that to set some variables
+script, arg1, arg2 = Argv
+This makes the user put in two different arguments when you execute this in console
+"python testscript.py Hello Whynot"
+so script = testscript.py
+arg1 = Hello
+arg2 = Whynot
+
+testFile = open(filename) : This lets us open a file, and set that
+open file to a variable named testFile. Opening a file is similar to
+putting a DVD into a DVD player. But nothing has happened yet!
+
+What we do next is read it with testFile.read(). We could print it by
+doing print(testFile.read())
+
+We also want to close the file after we've used it. It's just good habit.
+testFile.close()
+
+we can also use additional arguments with open(). Specifically setting
+what mode we're using it in. so say open(filename, 'w') says we're going
+to open the file with WRITE permission. the default is read which is What is
+chosen if you provide no args. a la open(filename), it's read only. Which i
+think is "r"
+
+We can also write to an open file. Say we start like
+openfile = open(filename, 'w')
+
+we can then use the "dvd player" to write via
+openfile.write("THis adds a line of text.")
+We can also use the 'a' instead of 'w' to append text to the end of the file
+Secondly, via exercise 17, we can do an open and read in one line:
+actual_file = open(filename, 'w').read()
+
+We can define our own methods/functions using def
+
+def my_method(myinput):
+  Needs to be tabbed over, i think it's 4 spaces or something.
+
+FUnctions can take arguments, for example:
+def print_one(arg1):
+   print(f"arg1 is {arg1}")
+
+and then we use it like so:
+print_one("hello")
+
+which would result python printing "arg1 is hello"
+
+We can also use filename.seek(0) which will take is back to the start
+of the file.
+so say we have actual_file = open(filename, 'w').read()
+we can print(actual_file), which puts us at the end of the file.
+we can then go back by using actual_file.seek(0)
+
+We can also use actual_file.readline() which will go line by line.
+
+We can simplify incrementations as well.
+So instead of
+timecounter = 1
+timecounter = timecounter + 1
+
+we can use:
+timecounter += 1
+
+Which will make its count go up by 1, or whatever we choose.
+I believe we can also use -= or *= or whatever.
+
+It's just shorthand, kinda like ++
+
+There's a way to call the name of a file, by using the .name call
+print(actual_file.name)
+
+I think it's just a property
+
+CAN YOU DO NAME ON EITHER OF THESE TWO?
+target1 = open(filename)
+target2 = target1.read()
+
+Or is it only target1 ?
+
+We can also use functions to return a value.
+
+def add(a, b):
+  return a + b
+
+So we could do:
+print("adding 2 + 5 = ", add(2, 5))
